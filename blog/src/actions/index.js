@@ -4,10 +4,18 @@ import _ from "lodash";
 export const fetchPostsAndUser = () => async (dispatch, getState) => {
   await dispatch(fetchPosts());
   const post = getState().posts;
-  const userids = _.uniq(_.map(post, "userId"));
-  userids.forEach((userid) => {
-    dispatch(fetchUser(userid));
-  });
+  // const userids = _.uniq(_.map(post, "userId"));
+  // userids.forEach((userid) => {
+  //   dispatch(fetchUser(userid));
+  // });
+
+  _.chain(post)
+    .map("userId")
+    .uniq()
+    .forEach((userid) => {
+      dispatch(fetchUser(userid));
+    })
+    .value();
 };
 
 export const fetchPosts = () => async (dispatch) => {
@@ -20,6 +28,7 @@ export const fetchUser = (id) => async (dispatch) => {
   dispatch({ type: "FETCH_USER", payload: response.data });
 };
 
+//Using memoization
 // export const fetchUser = (id) => (dispatch) => {
 //   _fetchUser(id, dispatch);
 // };
