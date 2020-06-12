@@ -1,0 +1,35 @@
+{
+  "streams": [
+    {
+      "title": "My stream",
+      "description": "some stream",
+      "id": 1
+    },
+    {
+      "title": "My stream 2",
+      "description": "some stream 2",
+      "id": 2
+    },
+    {
+      "title": "My stream 3",
+      "description": "some stream 6",
+      "id": 3
+    },
+    {
+      "title": "hai",
+      "description": "personal stream",
+      "id": 4
+    },
+    {
+      "title": "hai",
+      "description": "personal stream 2",
+      "id": 5
+    },
+    {
+      "title": "hai",
+      "description": "personal stream 2skasksjalksjs",
+      "userId": "101428933957076328785",
+      "id": 6
+    }
+  ]
+}
