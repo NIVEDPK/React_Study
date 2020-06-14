@@ -4,11 +4,13 @@ import { fetchStreams } from "../../actions";
 import { Link } from "react-router-dom";
 
 class StreamList extends React.Component {
-  renderAdmin = (userID) => {
-    if (userID === this.props.currentUserID) {
+  renderAdmin = (stream) => {
+    if (stream.userId === this.props.currentUserID) {
       return (
         <div className="right floated content">
-          <button className="ui button primary">EDIT</button>
+          <Link to={`streams/edit/${stream.id}`} className="ui button primary">
+            EDIT
+          </Link>
           <button className="ui button negative">DELETE</button>
         </div>
       );
@@ -19,7 +21,7 @@ class StreamList extends React.Component {
     return this.props.state.map((stream) => {
       return (
         <div className="item" key={stream.id}>
-          {this.renderAdmin(stream.userId)}
+          {this.renderAdmin(stream)}
           <i className="large middle aligned icon camera" />
           <div className="content">
             {stream.title}
