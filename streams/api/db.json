@@ -1,18 +1,6 @@
 {
   "streams": [
     {
-      "title": "hai",
-      "description": "personal stream ",
-      "userId": "101428933957076328785",
-      "id": 1
-    },
-    {
-      "title": "my new stream",
-      "description": "hope it works",
-      "userId": "101428933957076328785",
-      "id": 2
-    },
-    {
       "title": "some stream",
       "description": "Hope route",
       "id": 3
